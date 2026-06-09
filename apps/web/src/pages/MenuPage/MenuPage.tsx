@@ -51,14 +51,9 @@ export function MenuPage() {
             <ChefHat className="size-5 text-primary" />
             Edoko Foods
           </Link>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm" asChild>
-              <Link to="/order">Order Now</Link>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/signin">Sign In</Link>
-            </Button>
-          </div>
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/order">Order Now</Link>
+          </Button>
         </div>
       </header>
 
