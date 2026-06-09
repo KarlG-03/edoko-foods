@@ -257,8 +257,8 @@ export function OrderPage() {
               <Input id="customerEmail" type="email" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="customerPhone">Phone</Label>
-              <Input id="customerPhone" type="tel" value={customerPhone} onChange={(e) => setCustomerPhone(e.target.value)} />
+              <Label htmlFor="customerPhone">Leave a number so we can contact you</Label>
+              <Input id="customerPhone" type="tel" placeholder="e.g. 09xx-xxx-xxxx" value={customerPhone} onChange={(e) => setCustomerPhone(e.target.value)} />
             </div>
           </div>
         )}

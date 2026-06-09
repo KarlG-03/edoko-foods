@@ -122,7 +122,7 @@ export function LandingPage() {
             <Link to="/order">Get Started</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link to="/signin">Sign In</Link>
+            <Link to="/menu">View Menu</Link>
           </Button>
         </div>
       </section>
