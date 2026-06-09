@@ -1,17 +1,24 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
   BarChart3,
+  Bell,
+  ClipboardList,
   LogOut,
   Shield,
+  UtensilsCrossed,
   Users,
   Wifi,
 } from 'lucide-react';
 import { Button } from '@repo/ui';
 import { useAuth } from '@/contexts/AuthContext';
 import { cn } from '@/lib/utils';
+import { NotificationBell } from './NotificationBell';
 
 const navItems = [
   { to: '/dashboard', icon: BarChart3, label: 'Dashboard' },
+  { to: '/menu', icon: UtensilsCrossed, label: 'Menu' },
+  { to: '/orders', icon: ClipboardList, label: 'Orders' },
+  { to: '/notification-settings', icon: Bell, label: 'Notifications' },
   { to: '/users', icon: Users, label: 'Users' },
   { to: '/sessions', icon: Wifi, label: 'Sessions' },
 ];
@@ -62,9 +69,14 @@ export function AppShell() {
         </div>
       </aside>
 
-      <main className="flex-1 overflow-auto">
-        <Outlet />
-      </main>
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <header className="flex h-12 items-center justify-end border-b px-4">
+          <NotificationBell />
+        </header>
+        <main className="flex-1 overflow-auto">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }

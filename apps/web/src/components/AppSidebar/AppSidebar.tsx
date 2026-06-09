@@ -4,6 +4,8 @@ import {
   ChevronUp,
   LayoutDashboard,
   LogOut,
+  ShoppingCart,
+  UtensilsCrossed,
   UserRound,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
@@ -51,6 +53,8 @@ export function AppSidebar() {
 
   const navItems = [
     { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+    { to: '/menu', icon: UtensilsCrossed, label: 'Menu' },
+    { to: '/order', icon: ShoppingCart, label: 'Order Now' },
     { to: '/profile', icon: UserRound, label: 'Profile' },
   ];
 
@@ -66,7 +70,7 @@ export function AppSidebar() {
               {appName}
             </span>
             <span className="text-xs text-sidebar-foreground/70">
-              Internal app
+              Food Catering
             </span>
           </div>
         </div>

@@ -8,6 +8,9 @@ import { DashboardPage } from '@/pages/DashboardPage';
 import { ForgotPasswordPage } from '@/pages/ForgotPasswordPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { LandingPage } from '@/pages/LandingPage';
+import { MenuPage } from '@/pages/MenuPage';
+import { OrderPage } from '@/pages/OrderPage';
+import { OrderSuccessPage } from '@/pages/OrderSuccessPage';
 import { LegacyAuthRedirect } from '@/components/LegacyAuthRedirect';
 import { SignInPage } from '@/pages/SignInPage';
 import { SignUpPage } from '@/pages/SignUpPage';
@@ -29,6 +32,9 @@ export function App() {
           <AuthProvider>
             <Routes>
               <Route path="/" element={<LandingPage />} />
+              <Route path="/menu" element={<MenuPage />} />
+              <Route path="/order" element={<OrderPage />} />
+              <Route path="/order/success" element={<OrderSuccessPage />} />
               <Route path="/verify-email" element={<VerifyEmailPage />} />
               <Route element={<RequireAnonymous />}>
                 <Route path="/signin" element={<SignInPage />} />

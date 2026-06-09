@@ -87,6 +87,34 @@ export class EmailService {
     }
   }
 
+  async sendGenericEmail(to: string, subject: string, bodyText: string): Promise<void> {
+    const from = this.config.get<string>('EMAIL_FROM');
+    if (!from || !this.resend) {
+      this.log.warn('Email not configured; skipping notification email');
+      return;
+    }
+
+    const appName = this.getAppName();
+    const { error } = await this.resend.emails.send({
+      from,
+      to,
+      subject: `[${appName}] ${subject}`,
+      html: EmailService.baseTemplate({
+        appName,
+        title: subject,
+        preview: bodyText.substring(0, 100),
+        body: `<p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6">${EmailService.escapeHtml(bodyText)}</p>`,
+        ctaUrl: this.getWebAppBaseUrl() || '#',
+        ctaLabel: 'Open Admin Panel',
+        footer: `This is an automated notification from ${appName}.`,
+      }),
+    });
+
+    if (error) {
+      this.log.error(`Notification email failed: ${error.message ?? String(error)}`);
+    }
+  }
+
   private getAppName(): string {
     return this.config.get<string>('APP_NAME')?.trim() || 'App';
   }
