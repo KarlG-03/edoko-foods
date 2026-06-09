@@ -1,16 +1,16 @@
 {
-  "name": "internal-app-boilerplate",
+  "name": "edoko-foods",
   "version": "0.1.0",
   "private": true,
   "description": "pnpm monorepo starter — NestJS API + Vite web + admin",
   "scripts": {
-    "dev": "pnpm --parallel --filter ./apps/api --filter ./apps/web --filter ./apps/admin run dev",
+    "dev": "turbo dev",
     "dev:api": "pnpm --filter api start:dev",
     "dev:web": "pnpm --filter web dev",
     "dev:admin": "pnpm --filter admin dev",
-    "build": "pnpm run -r build",
-    "lint": "pnpm run -r --if-present lint",
-    "test": "pnpm run -r --if-present test",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
     "db:up": "docker compose up -d db",
     "db:down": "docker compose down",
     "db:studio": "pnpm --filter api exec prisma studio",
@@ -34,5 +34,8 @@
       "@prisma/engines",
       "prisma"
     ]
+  },
+  "devDependencies": {
+    "turbo": "^2.9.16"
   }
 }
