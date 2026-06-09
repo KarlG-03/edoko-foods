@@ -16,7 +16,7 @@ export function requireApiBaseUrl(): string {
   const base = getApiBaseUrl();
   if (!base) {
     throw new Error(
-      'App is not connected to the API. Set VITE_API_URL on the web static site (e.g. https://api.loancompass.app) and redeploy.',
+      'App is not connected to the API. Set VITE_API_URL on the web static site (e.g. https://api.edoko-foods.app) and redeploy.',
     );
   }
   return base;
