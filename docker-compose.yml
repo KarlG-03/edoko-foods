@@ -4,9 +4,9 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: app_boilerplate
+      POSTGRES_DB: edoko_foods
     ports:
-      - '5432:5432'
+      - '5439:5432'
     volumes:
       - pgdata:/var/lib/postgresql/data
 

@@ -6,7 +6,7 @@ Steps to create the first superadmin account on a fresh local or production envi
 
 ### Prerequisites
 
-- API running on `http://localhost:2005` (`pnpm dev` or `pnpm dev:api`)
+- API running on `http://localhost:2010` (`pnpm dev` or `pnpm dev:api`)
 - `ADMIN_BOOTSTRAP_SECRET` set in `apps/api/.env`
 
 ```env
@@ -18,7 +18,7 @@ ADMIN_BOOTSTRAP_SECRET=edoko-admin-2026
 ### Step 1 — Register an account
 
 ```bash
-curl -X POST http://localhost:2005/api/auth/register \
+curl -X POST http://localhost:2010/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"email":"admin@edoko.com","password":"Admin1234!"}'
 ```
@@ -26,7 +26,7 @@ curl -X POST http://localhost:2005/api/auth/register \
 ### Step 2 — Promote to superadmin
 
 ```bash
-curl -X POST http://localhost:2005/api/admin/bootstrap \
+curl -X POST http://localhost:2010/api/admin/bootstrap \
   -H "Content-Type: application/json" \
   -d '{"email":"admin@edoko.com","secret":"edoko-admin-2026"}'
 ```
@@ -38,7 +38,7 @@ Expected response:
 
 ### Step 3 — Log in to the admin panel
 
-Open `http://localhost:5177` and sign in with the credentials from Step 1.
+Open `http://localhost:5191` and sign in with the credentials from Step 1.
 
 ---
 
@@ -46,9 +46,9 @@ Open `http://localhost:5177` and sign in with the credentials from Step 1.
 
 | App         | URL                        |
 |-------------|----------------------------|
-| Web (customer) | http://localhost:5178   |
-| Admin panel | http://localhost:5177      |
-| API         | http://localhost:2005      |
+| Web (customer) | http://localhost:5190   |
+| Admin panel | http://localhost:5191      |
+| API         | http://localhost:2010      |
 
 ---
 

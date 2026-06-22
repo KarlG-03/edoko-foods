@@ -13,7 +13,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "pnpm run stop:stale && pnpm run start:dev",
-    "stop:stale": "lsof -ti:2005 | xargs kill -9 2>/dev/null || true",
+    "stop:stale": "lsof -ti:2010 | xargs kill -9 2>/dev/null || true",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
